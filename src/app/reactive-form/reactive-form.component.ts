@@ -18,7 +18,7 @@ isSubmitted: boolean;
       'fname': ['', [Validators.required]],
       'lname': ['', [Validators.required]],
       'email': ['', [ Validators.required, Validators.email]],
-      'mobile': ['', [Validators.required, Validators.minLength(10)]]
+      'mobile': ['', [Validators.required, Validators.maxLength(10)]]
     });
 
   }
@@ -32,4 +32,23 @@ isSubmitted: boolean;
    // signupForm.reset();
 
     }
+
+  setValueChanges() {
+    this.signupForm.setValue({
+      'fname': 'lalita',
+      'lname': 'choudhari',
+      'email': 'lalita.choudhari@techprimelab.com',
+      'mobile': '9766564374'
+    });
+  }
+
+  patchValueChanges() {
+     this.signupForm.patchValue({
+       'fname': 'shri'
+     });
+  }
+
+  resetValue() {
+    this.signupForm.reset();
+  }
 }
