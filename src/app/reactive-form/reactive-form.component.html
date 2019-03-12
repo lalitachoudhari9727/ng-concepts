@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="signupForm" (submit)="postData(signupForm)">
+      <h2>Reactive Forms</h2>
+      <div class="form-group">
+        <label>First Name:</label>
+        <input type="text" formControlName="fname" name="fname" class="form-control">
+        <span class="alert alert-danger"  *ngIf="signupForm.controls['fname'].hasError('required') && isSubmitted">First Name is required.</span>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name:</label>
+        <input type="text" formControlName="lname" name="lname" class="form-control">
+        <span class="alert alert-danger"  *ngIf="signupForm.controls['lname'].hasError('required') && isSubmitted">Last Name is required.</span>
+      </div>
+
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="text" formControlName="email" name="email" class="form-control">
+        <span class="alert alert-danger"  *ngIf="signupForm.controls['email'].hasError('required') && isSubmitted ">
+            Email is required.
+        </span>
+        <div *ngIf="signupForm.controls['email'].touched && !signupForm.controls['email'].valid" >
+          <span class="alert alert-danger"  *ngIf="signupForm.controls['email'].hasError('email')">
+            Please enter valid email.
+          </span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mobile Number:</label>
+        <input type="number" formControlName="mobile" name="mobile"  class="form-control">
+        <span class="alert alert-danger" *ngIf="signupForm.controls['mobile'].hasError('required') && isSubmitted">
+            Mobile Number is required.
+        </span>
+        <div  class="alert alert-danger" *ngIf="signupForm.controls['mobile'].touched && signupForm.controls['mobile'].hasError('minLength')" >
+          Please enter valid mobile number.
+        </div>
+      </div>
+
+      <div class="align-center">
+      <input type="submit" name="submit" value="Submit" class="btn btn-primary" >
+      </div>
+    </form>
+  </div>
+  <div *ngIf="isSubmitted">
+    {{data|json}}
+  </div>
+</div>
