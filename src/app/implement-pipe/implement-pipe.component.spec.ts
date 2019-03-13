@@ -1,21 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AngularDirectivesComponent } from './angular-directives.component';
+import { ImplementPipeComponent } from './implement-pipe.component';
 
-
-describe('AngularDirectivesComponent', () => {
-  let component: AngularDirectivesComponent;
-  let fixture: ComponentFixture<AngularDirectivesComponent>;
+describe('ImplementPipeComponent', () => {
+  let component: ImplementPipeComponent;
+  let fixture: ComponentFixture<ImplementPipeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AngularDirectivesComponent ]
+      declarations: [ ImplementPipeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AngularDirectivesComponent);
+    fixture = TestBed.createComponent(ImplementPipeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
