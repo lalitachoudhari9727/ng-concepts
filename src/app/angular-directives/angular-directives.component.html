@@ -1,0 +1,47 @@
+<!--<div class="container">
+<ul class="nav nav-tabs">
+  <li class="active">
+
+        Simple Custom Directive
+    </a>
+  </li>
+  <li><a href="#anotherCustomDirective" data-toggle="tab">Another Custom Directive</a></li>
+</ul>-->
+
+<div class="container">
+  <div>
+    <h4>Simple Custom Directive for changing background color</h4>
+    <p  appChangeBackgroundColor>
+      angular-directives works!
+    </p>
+  </div>
+  <div>
+    <h4>Another Custom Directive by taking input as technology name</h4>
+    <input type="text" name="techName" [(ngModel)]="technologyName">
+    <img appChangeImage [techName]="technologyName" style="height: 100px;width: 100px;">
+  </div>
+  <div>
+    <h4>List of persons using Attribute Directive NgSwitch</h4>
+    <ul *ngFor="let person of persons" [ngSwitch]="person.country">
+      <li *ngSwitchCase="'UK'" class="text-success">
+        {{person.name}} {{person.country}}
+      </li>
+      <li *ngSwitchCase="'USA'" class="text-primary">
+        {{person.name}} {{person.country}}
+      </li>
+      <li *ngSwitchCase="'IND'" class="text-danger">
+        {{person.name}} {{person.country}}
+      </li>
+      <li *ngSwitchCase="'HK'" class="text-warning">
+        {{person.name}} {{person.country}}
+      </li>
+      <li *ngSwitchDefault class="text-success">
+        {{person.name}} {{person.country}}
+      </li>
+    </ul>
+
+  </div>
+</div>
+
+
+
