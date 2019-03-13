@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {EventManagerPlugin} from '@angular/platform-browser/src/dom/events/event_manager';
 import {Employee} from '../models/employee';
+import {mobileNumberValidator} from '../validators';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,14 +12,14 @@ import {Employee} from '../models/employee';
 export class ReactiveFormComponent implements OnInit {
 signupForm: FormGroup;
 data: any;
-employee: Employee;
+employee: Employee = new Employee();
 isSubmitted: boolean;
   constructor(private formBuilder: FormBuilder) {
     this.signupForm = this.formBuilder.group({
       'fname': ['', [Validators.required]],
       'lname': ['', [Validators.required]],
       'email': ['', [ Validators.required, Validators.email]],
-      'mobile': ['', [Validators.required, Validators.maxLength(10)]]
+      'mobile': ['', [Validators.required, mobileNumberValidator]]
     });
 
   }

@@ -21,7 +21,7 @@
       <div class="form-group">
         <label>Gender</label>
         <div *ngFor="let item of constant.genders">
-          <input type="radio" id="{{item}}"  name="gender"  [value]="item" ngModel #gen="ngModel">{{item}}
+          <input type="radio" id="{{item}}"  name="gender"  value="{{item}}" ngModel #gen="ngModel" (change)="onChangeGender(item)">{{item}}
           <span class="alert alert-danger" *ngIf="gen.touched && !gen.valid">Please enter gender.</span>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="form-group">
         <label>Hobbies</label>
         <div *ngFor="let hob of constant.hobbies">
-          <input type="checkbox" id="{{hob}}"  name="hobbies"  [value]="hob" ngModel #hobby="ngModel">{{hob}}
+          <input type="checkbox" id="{{hob}}"  name="hobbies"  [value]="hob" ngModel #hobby="ngModel"  (change)="onChangeHobbies(hob)">{{hob}}
           <span class="alert alert-danger" *ngIf="hobby.touched && !hobby.valid">Please enter Hobby.</span>
         </div>
       </div>
@@ -42,7 +42,6 @@
             {{ item }}
           </option>
         </select>
-
       </div>
 
       <div class="form-group">
@@ -61,8 +60,11 @@
 
 </div>
 
-<div *ngIf="regForm.submitted">
-
- {{regForm.value |json}}
-
+<div *ngIf="regForm.submitted" >
+  <h4>Name:</h4>{{firstName.value}} {{lastName.value}}
+  <h4>Email:</h4>{{email.value}}
+  <h4>Gender:</h4>{{gender}}
+  <h4> Hobbies:</h4>{{hobbies}}
+  <h4>State:</h4>{{state.value}}
+  <h4>Mobile Number:</h4>{{mobile.value}}
 </div>

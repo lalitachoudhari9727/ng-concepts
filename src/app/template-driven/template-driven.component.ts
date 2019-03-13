@@ -9,8 +9,9 @@ import {Employee} from '../models/employee';
   styleUrls: ['./template-driven.component.css']
 })
 export class TemplateDrivenComponent implements OnInit {
-  employee: Employee;
+  gender: string;
   constant = Constants;
+  hobbies: string[] = new Array(0);
   constructor() { }
 
   ngOnInit() {
@@ -22,5 +23,13 @@ export class TemplateDrivenComponent implements OnInit {
 
   changeModel() {
 
+  }
+
+  onChangeHobbies(hob: string) {
+    this.hobbies.push(hob);
+  }
+
+  onChangeGender(item: string) {
+    this.gender = item;
   }
 }
