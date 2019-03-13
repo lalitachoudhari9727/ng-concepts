@@ -9,8 +9,7 @@ import {PipesPipe} from '../pipes/pipes.pipe';
 })
 export class ImplementPipeComponent implements OnInit {
   order = 'title';
-  constructor(private orderPipe: PipesPipe) {
-    console.log(this.orderPipe.transform(this.items, 'digit'));
+  constructor() {
   }
 
   items = [
