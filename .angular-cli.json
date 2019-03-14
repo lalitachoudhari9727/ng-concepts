@@ -19,8 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "C:/Users/Apsara/WebstormProjects/AngularExamples/node_modules/bootstrap/dist/css/bootstrap.css",
-        "C:/Users/Apsara/WebstormProjects/AngularExamples/src/styles.css"
+        "C:/Users/Apsara/WebstormProjects/ng-concepts/node_modules/bootstrap/dist/css/bootstrap.css",
+        "styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

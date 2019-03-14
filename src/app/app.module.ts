@@ -12,31 +12,16 @@ import { ChangeBackgroundColorDirective } from './angular-directives/custom-dire
 import { ChangeImageDirective } from './angular-directives/custom-directive/change-image.directive';
 import { PipesPipe } from './pipes/pipes.pipe';
 import { ImplementPipeComponent } from './implement-pipe/implement-pipe.component';
- const routes: Routes = [
-   { path: '', redirectTo: 'templateDriven', pathMatch: 'full' },
-    { path: 'templateDriven', component: TemplateDrivenComponent },
-    { path: 'reactiveForm', component: ReactiveFormComponent },
-    { path: 'directives', component: AngularDirectivesComponent},
-    { path: 'pipes', component: ImplementPipeComponent}
+import {AppRoutingModule} from './app.routing.module';
 
-];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TemplateDrivenComponent,
-    ReactiveFormComponent,
-    AngularDirectivesComponent,
-    ChangeBackgroundColorDirective,
-    ChangeImageDirective,
-    PipesPipe,
-    ImplementPipeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
