@@ -7,6 +7,10 @@ import {ImplementPipeModule} from './implement-pipe/implement-pipe.module';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: '../app/template-driven/template-driven.module#TemplateDrivenModule'
+  },
+  {
     path: 'template-driven',
     loadChildren: '../app/template-driven/template-driven.module#TemplateDrivenModule'
   },

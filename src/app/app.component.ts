@@ -7,5 +7,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+constructor(private router: Router) {
+
+}
+  naviagteTo(nav: string) {
+    this.router.navigate([nav]);
+  }
 }

@@ -1,31 +1,16 @@
-<div class="p-4">
-  <h2>Custom Pipe of Sort using dropdown values</h2>
+<div class="container">
 
-  <div class="form-group">
-    <select class="custom-select" [(ngModel)]="order">
-      <option value="title">Title</option>
-      <option value="value">Value</option>
-      <option value="digit">Digit</option>
-    </select>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Enter search string here" [(ngModel)]="searchString">
+    <div class="input-group-btn">
+      <button class="btn btn-primary" name="search" value="Search" (click)="onSearchClick()">Search</button>
+    </div>
   </div>
 
-  <h4>Object Items</h4>
-  <table class="table">
-    <thead>
-    <tr>
-      <th>Title</th>
-      <th>Value</th>
-      <th>Digit</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    <tr *ngFor="let item of items | orderBy : order ">
-      <td>{{item.title}}</td>
-      <td>{{item.value}}</td>
-      <td>{{item.digit}}</td>
-    </tr>
-    </tbody>
-  </table>
-
+<div *ngIf="isShowList">
+<ul *ngFor="let name of constant.names | searchPipe:searchString ">
+  <li> {{name}} </li>
+</ul>
 </div>
+</div>
+

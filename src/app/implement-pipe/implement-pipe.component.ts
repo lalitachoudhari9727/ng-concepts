@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PipesPipe} from '../pipes/pipes.pipe';
+import {Constants} from '../constants';
 
 @Component({
   selector: 'app-implement-pipe',
@@ -9,6 +10,9 @@ import {PipesPipe} from '../pipes/pipes.pipe';
 })
 export class ImplementPipeComponent implements OnInit {
   order = 'title';
+  constant = Constants;
+  searchString: string;
+  isShowList: boolean;
   constructor() {
   }
 
@@ -22,4 +26,7 @@ export class ImplementPipeComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSearchClick() {
+   this.isShowList = true;
+  }
 }

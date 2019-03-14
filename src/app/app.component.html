@@ -16,14 +16,11 @@
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Angular Concepts</a>
-    </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a [routerLink]="['/template-driven']" routerLinkActive="router-link-active" >Template Driven</a></li>
-      <li><a [routerLink]="['/reactive-form']" routerLinkActive="router-link-active" >Reactive Form</a></li>
-      <li><a [routerLink]="['/directives']" routerLinkActive="router-link-active" >Directives</a></li>
-      <li><a [routerLink]="['/pipes']" routerLinkActive="router-link-active" >Pipes</a></li>
+      <li class="active"><a (click)="naviagteTo('/template-driven')" >Template Driven</a></li>
+      <li><a (click)="naviagteTo('/reactive-form')" >Reactive Form</a></li>
+      <li><a (click)="naviagteTo('/directives')" >Directives</a></li>
+      <li><a  (click)="naviagteTo('/pipes')">Pipes</a></li>
     </ul>
   </div>
 </nav>

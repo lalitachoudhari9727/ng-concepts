@@ -5,10 +5,11 @@ import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ChangeImageDirective} from './custom-directive/change-image.directive';
 import {ChangeBackgroundColorDirective} from './custom-directive/change-background-color.directive';
+import { HighlightDirective } from './custom-directive/highlight.directive';
 
 
 @NgModule({
-  declarations: [AngularDirectivesComponent, ChangeImageDirective, ChangeBackgroundColorDirective],
+  declarations: [AngularDirectivesComponent, ChangeImageDirective, ChangeBackgroundColorDirective, HighlightDirective],
   imports: [AngularDirectivesRoutingModule, CommonModule, FormsModule, ReactiveFormsModule]
 })
 

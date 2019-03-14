@@ -1,20 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'orderBy'
+  name: 'searchPipe'
 })
 export class PipesPipe implements PipeTransform {
 
   transform(items: any[], field: string): any[] {
+    let filteredData: any = [];
     if (!items) {
       return [];
     }
-    if (field) {
-      items.sort((a, b) => a[field] > b[field] ? 1 : -1);
-    } else {
-      items.sort((a, b) => a > b ? 1 : -1);
-    }
-    return items;
+    field = field.toLowerCase();
+     items.filter((data) => {
+      data = data.toLowerCase();
+       if (data.includes(field)) {
+         filteredData.push(data);
+       }
+    });
+     return filteredData;
   }
 
 }
