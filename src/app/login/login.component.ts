@@ -12,9 +12,11 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    sessionStorage.setItem('is_user_logged_in', 'false');
     }
   onSubmit(nav: string) {
     if (this.userId == 'admin123' && this.password == 'Iamadmin') {
+      sessionStorage.setItem('is_user_logged_in',  'true');
       this.router.navigate([nav]);
     }
   }
