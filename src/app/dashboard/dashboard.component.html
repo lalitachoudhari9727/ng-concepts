@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li [class.active]="router.url=='/dashboard/template-driven' || router.url==''" ><a (click)="naviagteTo('/dashboard/template-driven')" >Template Driven</a></li>
+      <li [class.active]="router.url=='/dashboard/reactive-form'"><a (click)="naviagteTo('/dashboard/reactive-form')" >Reactive Form</a></li>
+      <li [class.active]="router.url=='/dashboard/directives'"><a (click)="naviagteTo('/dashboard/directives')" >Directives</a></li>
+      <li [class.active]="router.url=='/dashboard/pipes'"><a  (click)="naviagteTo('/dashboard/pipes')">Pipes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

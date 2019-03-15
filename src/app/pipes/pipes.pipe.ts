@@ -17,7 +17,7 @@ export class PipesPipe implements PipeTransform {
          filteredData.push(data);
        }
     });
-     return filteredData;
+     return filteredData.sort();
   }
 
 }

@@ -9,19 +9,11 @@ import {Constants} from '../constants';
   providers: [PipesPipe]
 })
 export class ImplementPipeComponent implements OnInit {
-  order = 'title';
   constant = Constants;
   searchString: string;
   isShowList: boolean;
   constructor() {
   }
-
-  items = [
-    { title: 'third', value: 'three', digit: 44 },
-    { title: 'second', value: 'two', digit: 14 },
-    { title: 'first', value: 'one', digit: 100 },
-  ];
-
 
   ngOnInit() {
   }
