@@ -1,10 +1,14 @@
-<!--
 <div class="container">
 <div>
 <ul class="nav nav-tabs">
   <li class="active">
     <a href="#simpleCustomDirective" data-toggle="tab">
         Simple Custom Directive
+    </a>
+  </li>
+  <li>
+    <a href="#highlightText" data-toggle="tab">
+        Highlight text
     </a>
   </li>
   <li><a href="#anotherCustomDirective" data-toggle="tab">Another Custom Directive</a></li>
@@ -18,10 +22,23 @@
       angular-directives works!
     </p>
   </div>
-  <div class="tab-pane" id="anotherCustomDirective">
-    <input type="text" name="techName" [(ngModel)]="technologyName">
-    <img appChangeImage [techName]="technologyName" style="height: 100px;width: 100px;">
+
+  <div class="tab-pane" id="highlightText">
+    <div>
+      <h4>On mouse hover highlight text.</h4>
+      <p appHighlight>
+        Highlight content when mouse over on it.
+      </p>
+    </div>
   </div>
+  <div class="tab-pane" id="anotherCustomDirective">
+    <div>
+      <h4>Another Custom Directive by taking input as technology name</h4>
+      <input type="text" name="techName" [(ngModel)]="technologyName">
+      <img appChangeImage [techName]="technologyName" style="height: 100px;width: 100px;">
+    </div>
+  </div>
+
   <div class="tab-pane" id="attributeDirective">
 <ul *ngFor="let person of persons" [ngSwitch]="person.country">
   <li *ngSwitchCase="'UK'" class="text-success">
@@ -45,10 +62,10 @@
   </div>
 
 </div>
--->
 
 
 
+<!--
 <div class="container">
   <div>
     <h4>Simple Custom Directive for changing background color</h4>
@@ -86,3 +103,4 @@
 
   </div>
 </div>
+-->
